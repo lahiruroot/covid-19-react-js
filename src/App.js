@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends React.Component {
+  constructor() {
+    super();
+    this.setState = {
+      data: false
+    }
+  }
+  componentDidMount() {
+    let url = "https://hpb.health.gov.lk/api/get-current-statistical";
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/jason',
+        'Content-TYpe': 'application/jason',
+      }
+    }).then((result) => {
+      result.json().then((resp) => {
+        this.setState({ data: resp })
+      })
+    })
+  }
+
+
+  render() {
+  const data = this.state.data;
+    console.warn(data);
+    return (<div>
+      <h1>
+        123
+      </h1>
+    </div>)
+  }
+
 }
-
-export default App;

@@ -27,7 +27,6 @@ export default class Data extends Component {
               loading: false,
               cases: Response.data
             })
-            // console.log(Response.data.data.local_active_cases);
           }).catch((error) => {
             console.log(error);
           })
@@ -38,7 +37,7 @@ export default class Data extends Component {
     return this.state.loading ? <div>
       <LinearProgress />
 
-    </div> : <div>Locaal Cases {this.state.cases.data.local_active_cases}<br />Local Death {this.state.cases.data.local_deaths}</div>
+      </div> : <div><h3>{this.state.cases.data.update_date_time}</h3><br/></div>
         
     }
 }

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import axios from 'axios'
+
 
 
 const useStyles = makeStyles({
@@ -29,6 +31,23 @@ export default function SimpleCard() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
+  const [loading, setloading] = useState(false);
+  const [Case, setCase] = useState(null);
+    
+    useEffect(() => {
+        
+        axios({
+            method: "GET",
+            url: "https://www.hpb.health.gov.lk/api/get-current-statistical",
+          }).then((Response) => {
+            setloading(true);
+            setCase(Response.data.data.local_active_cases);
+            // console.log(Response.data.data.local_active_cases);
+          }).catch((error) => {
+            console.log(error);
+          })
+       
+    }, [])
 
   return (
     <Card className={classes.root}>
@@ -37,7 +56,7 @@ export default function SimpleCard() {
           Word of the Day
         </Typography>
         <Typography variant="h5" component="h2">
-          Cases:
+          Cases: {loading ? Case: <div>Loading</div>}
         </Typography>
       </CardContent>
     </Card>

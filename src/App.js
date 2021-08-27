@@ -1,5 +1,20 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > * + *': {
+      marginLeft: theme.spacing(2),
+    },
+  },
+}));
+
+
 
 export default class App extends React.Component {
 
@@ -10,7 +25,7 @@ export default class App extends React.Component {
   async componentDidMount() {
     axios({
       method: "GET",
-      url:"https://www.hpb.health.gov.lk/api/get-current-statistical",
+      url: "https://www.hpb.health.gov.lk/api/get-current-statistical",
     }).then((Response) => {
       this.setState({
         loading: false,
@@ -23,15 +38,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    // if (this.state.loading) {
-    //   return <div>loading...</div>;
-    // }else{
-    //   <div>{this.state.cases}</div>
-    // }
-    // // if (!this.state.cases) {
-    // //   return <div>didn't get a cases</div>;
-    // // }
-    return this.state.loading ? <div>Loading</div> : <div>{this.state.cases.data.local_active_cases}<br/>{this.state.cases.data.local_deaths}</div>
-    
+    return this.state.loading ? <div>
+      <CircularProgress />
+    </div> : <div>{this.state.cases.data.local_active_cases}<br />{this.state.cases.data.local_deaths}</div>
+
   }
 }

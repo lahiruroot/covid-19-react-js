@@ -1,16 +1,15 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import Paper from '@material-ui/core/Paper';
 
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    '& > * + *': {
-      marginLeft: theme.spacing(2),
-    },
+    width: '100%',
+    height: 30,
   },
 }));
 
@@ -38,9 +37,10 @@ export default class App extends React.Component {
   }
 
   render() {
+    <Paper elevation={3} /> 
     return this.state.loading ? <div>
-      <CircularProgress />
-    </div> : <div>{this.state.cases.data.local_active_cases}<br />{this.state.cases.data.local_deaths}</div>
+      <LinearProgress />
+    </div> : <div>Locaal Cases {this.state.cases.data.local_active_cases}<br />Local Death {this.state.cases.data.local_deaths}</div>
 
   }
 }

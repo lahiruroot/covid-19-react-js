@@ -50,10 +50,7 @@ export default function CenteredGrid() {
     })
 
   }, [])
-
-
  
-
   return (
     <React.Fragment>
       <CssBaseline />
@@ -81,6 +78,10 @@ export default function CenteredGrid() {
         </div>
       </div>
     </div>
+    <br/>
+    <h1>
+      HED
+    </h1>
       </Container>
     </React.Fragment>
   );

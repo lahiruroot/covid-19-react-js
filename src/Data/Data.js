@@ -37,7 +37,8 @@ export default class Data extends Component {
     return this.state.loading ? <div>
       <LinearProgress />
 
-      </div> : <div><h3>{this.state.cases.data.update_date_time}</h3><br/></div>
+      </div> : <div><h3></h3><br/></div>
         
     }
 }
+// {this.state.cases.data.update_date_time}

@@ -12,7 +12,7 @@
 ## EndPoint
  - GET https://www.hpb.health.gov.lk/api/get-current-statistical
 
-# Sources :
+# Resource :
 
 ## Johns Hopkins University 
  - Growth Rate

@@ -52,7 +52,7 @@ export default function Globle() {
         <React.Fragment>
             <CssBaseline />
             <Container maxWidth="fixed">
-                <h1>Global Cases</h1>
+                <h1>Daily  Global Cases</h1>
                 <p>Last updated at: {loading ? Time : <div>Getting Data...</div>}</p>
                 <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
                     <div style={{ flexGrow: 1 }}>

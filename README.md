@@ -1,7 +1,7 @@
 # COVID-19 : Live Situational Analysis Dashboard of Sri Lanka
 
 
-<img src="https://github.com/lahiruroot/covid-19-react-js/blob/master/SS.png" />
+<img src="https://github.com/lahiruroot/covid-19-react-js/blob/master/Template.png" />
 
 ## View Project
  - https://covidlivesrilanka.herokuapp.com/

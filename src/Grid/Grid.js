@@ -30,9 +30,7 @@ export default function CenteredGrid() {
   const [Deths, setDeths] = useState(null);
   const [Recover, setRecover] = useState(null);
   const [Ccase, setCcase] = useState(null);
-  // const [Cactive,setCactive] = useState(null);
-
-
+  const [Time,setTime] = useState(null);
   useEffect(() => {
 
     axios({
@@ -45,6 +43,7 @@ export default function CenteredGrid() {
       setDeths(Response.data.data.local_deaths);
       setRecover(Response.data.data.local_recovered);
       setCcase(Response.data.data.local_new_cases);
+      setTime(Response.data.data.update_date_time);
     }).catch((error) => {
       console.log(error);
     })
@@ -55,34 +54,32 @@ export default function CenteredGrid() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="fixed">
+      <h1>Local Cases</h1>
       <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
       <div style={{ flexGrow: 1}}>
         <div className={classes.root}>
           <Grid container spacing={1}>
             <Grid item xs={12}>
-              <Paper className={classes.paper}><h2>Total Cases:</h2><h1>{loading ? Total : <div>Getting Data...</div>}</h1></Paper>
+              <Paper className={classes.paper}><h2>Total Cases:</h2><h1>{loading ? Total : <div>Getting Data...</div>}</h1>{loading ? Time : <div>Getting Data...</div>}</Paper>
             </Grid>
             <Grid item xs={3}>
-              <Paper className={classes.paper}>New Cases : {loading ? Ccase : <div>Getting Data...</div>}</Paper>
+              <Paper className={classes.paper}>New Cases : {loading ? Ccase : <p>Getting Data...</p>}</Paper>
             </Grid>
             <Grid item xs={3}>
-              <Paper className={classes.paper}>Hospitalized:{loading ? Case : <div>Getting Data...</div>}</Paper>
+              <Paper className={classes.paper}>Hospitalized:{loading ? Case : <p>Getting Data...</p>}</Paper>
             </Grid>
             <Grid item xs={3}>
-              <Paper className={classes.paper}>Recoveries : {loading ? Recover : <div>Getting Data...</div>}</Paper>
+              <Paper className={classes.paper}>Recoveries : {loading ? Recover : <p>Getting Data...</p>}</Paper>
             </Grid>
             <Grid item xs={3}>
-              <Paper className={classes.paper}>Deaths : {loading ? Deths : <div>Getting Data...</div>}</Paper>
+              <Paper className={classes.paper}>Deaths : {loading ? Deths : <p>Getting Data...</p>}</Paper>
             </Grid>
           </Grid>
         </div>
       </div>
     </div>
-    <br/>
-    <h1>
-      HED
-    </h1>
-      </Container>
+    </Container>
+    <br></br>
     </React.Fragment>
   );
 }

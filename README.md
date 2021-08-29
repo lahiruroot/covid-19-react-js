@@ -3,6 +3,8 @@
 
 <img src="https://github.com/lahiruroot/covid-19-react-js/blob/master/SS.png" />
 
+## View diployment
+ - https://covidlivesrilanka.herokuapp.com/
 
 ## Crafted by Arimac Digital
  - https://covid19-dashboard.arimac.digital/

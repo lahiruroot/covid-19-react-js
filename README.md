@@ -8,7 +8,10 @@
 
 ## Crafted by Arimac Digital
  - https://covid19-dashboard.arimac.digital/
+ 
+## Global reports
 
+- Coronavirus COVID19 API By Postman : https://documenter.getpostman.com/view/10808728/SzS8rjbc#00030720-fae3-4c72-8aea-ad01ba17adf8
 ## API Documentation (Local)
  - https://www.hpb.health.gov.lk/en/api-documentation
 

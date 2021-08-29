@@ -8,8 +8,12 @@
 
 ## Crafted by Arimac Digital
  - https://covid19-dashboard.arimac.digital/
-## API Documentation
+
+## API Documentation (Local)
  - https://www.hpb.health.gov.lk/en/api-documentation
+
+## Api Documentation (Global)
+ - https://api.covid19api.com/summary
 
 ## EndPoint
  - GET https://www.hpb.health.gov.lk/api/get-current-statistical

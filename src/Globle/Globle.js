@@ -24,7 +24,7 @@ export default function Globle() {
     const bull = <span className={classes.bullet}>•</span>;
     const [loading, setloading] = useState(false);
     const [Total, setTotal] = useState(null);
-    const [NewRecovered,setNewrecover] = useState(null);
+    const [NewRecovered, setNewrecover] = useState(null);
     const [Deths, setDeths] = useState(null);
     const [Recover, setRecover] = useState(null);
     const [Cases, setCases] = useState(null);
@@ -53,13 +53,13 @@ export default function Globle() {
             <CssBaseline />
             <Container maxWidth="fixed">
                 <h1>Daily  Global Cases</h1>
-                <p>Last updated at: {loading ? Time : <div>Getting Data...</div>}</p>
+                <p>Last updated at (UTC): {loading ? Time : <div>Getting Data...</div>}</p>
                 <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
                     <div style={{ flexGrow: 1 }}>
                         <div className={classes.root}>
                             <Grid container spacing={1}>
                                 <Grid item xs={12}>
-                                    <Paper className={classes.paper}><h2>New Cases:</h2><h1>{loading ? Cases : <div>Getting Data...</div>}</h1></Paper>
+                                    <Paper className={classes.paper}><h2>New Cases</h2><h1>{loading ? Cases : <div>Getting Data...</div>}</h1></Paper>
                                 </Grid>
                                 <Grid item xs={3}>
                                     <Paper className={classes.paper}>Total Cases : {loading ? Total : <p>Getting Data...</p>}</Paper>

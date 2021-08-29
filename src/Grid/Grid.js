@@ -54,13 +54,13 @@ export default function CenteredGrid() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="fixed">
-      <h1>Local Cases</h1><p>Last updated at: {loading ? Time : <div>Getting Data...</div>}</p>
+      <h1>Local Cases</h1><p>Last updated at (GMT+5:30): {loading ? Time : <div>Getting Data...</div>}</p>
       <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
       <div style={{ flexGrow: 1}}>
         <div className={classes.root}>
           <Grid container spacing={1}>
             <Grid item xs={12}>
-              <Paper className={classes.paper}><h2>New Cases:</h2><h1>{loading ? Ccase : <div>Getting Data...</div>}</h1></Paper>
+              <Paper className={classes.paper}><h2>New Cases</h2><h1>{loading ? Ccase : <div>Getting Data...</div>}</h1></Paper>
             </Grid>
             <Grid item xs={3}>
               <Paper className={classes.paper}>Total Cases : {loading ? Total : <p>Getting Data...</p>}</Paper>
